@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const scrapeData = require('../api/handlers/scrapeHandlers');
+const {scrapeData,ScrapeLaptops,ScrapeMobiles,ScrapeShoes} = require('../api/handlers/scrapeHandlers');
 
-// GET Movies List
-router.get('/scrape', scrapeData);
+//Scrape Laptops Data
+router.get('/scrape/laptops', ScrapeLaptops);
+//Scrape Mobiles Data
+router.get('/scrape/mobiles', ScrapeMobiles);
+//Scrape Shoes Data
+router.get('/scrape/shoes', ScrapeShoes);
 
 module.exports = router;
