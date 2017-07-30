@@ -5,6 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const scrape = require('./routes/scrape');
+const imdb = require('./routes/imdb');
 const index = require('./routes/index');
 const app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api', scrape);
 app.use('/', index);
+app.use('/imdb',imdb);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
